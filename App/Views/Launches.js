@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 
 import { loadLaunches } from '../Store/launches'
 import Logo from '../Components/Logo'
-import Loading from '../Components/Loading'
 
 const styles = StyleSheet.create({
   container: {

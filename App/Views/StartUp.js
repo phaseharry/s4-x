@@ -2,7 +2,8 @@ import React from 'react';
 import { View, StyleSheet, Dimensions, Image } from 'react-native';
 import { connect } from 'react-redux'
 
-import { loadLaunches } from '../Store/launches'
+import { loadLaunches } from '../Store/reducers/launches'
+import { loadRockets } from '../Store/reducers/rockets'
 import { removeStartUp } from '../Navigation/helpers'
 import SpaceX from '../Assets/spacex-logo.png'
 
@@ -45,7 +46,10 @@ class Launches extends React.Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    initialLoad: () => dispatch(loadLaunches())
+    initialLoad: () => {
+      dispatch(loadLaunches())
+      dispatch(loadRockets())
+    }
   }
 }
 
