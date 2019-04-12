@@ -16,7 +16,7 @@ export const loadLaunches = () => {
     .then(res => res.data)
     .then(launches => {
       launches.reverse();
-      dispatch(getLaunches(launches))
+      return dispatch(getLaunches(launches))
     })
     .catch(err => console.error(err))
   }

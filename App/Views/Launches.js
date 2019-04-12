@@ -2,7 +2,6 @@ import React from 'react';
 import { StyleSheet, FlatList, Button, ScrollView } from 'react-native';
 import { connect } from 'react-redux'
 
-import { loadLaunches } from '../Store/launches'
 import Logo from '../Components/Logo'
 
 const styles = StyleSheet.create({
@@ -56,10 +55,4 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    initialLoad: () => dispatch(loadLaunches())
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Launches)
+export default connect(mapStateToProps, null)(Launches)

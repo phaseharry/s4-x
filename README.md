@@ -5,6 +5,12 @@ More information can be found [here](https://github.com/r-spacex/SpaceX-API)
 
 ### Tech Stack
 - React-Native
-- Redux & React-Redux
+- React
 - React-Navigation
+- Redux & React-Redux
 - MapBox
+
+
+###### Need to do
+- vector icons integration for android if error occurs
+- react-gesture integration for android

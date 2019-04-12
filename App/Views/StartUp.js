@@ -23,15 +23,16 @@ const styles = StyleSheet.create({
   }
 })
 
-class Launches extends React.Component {
+class StartUp extends React.Component {
   static navigationOptions = {
     header: null
   };
   componentDidMount(){
-    return this.props.initialLoad()
+    console.log(this)
+    return this.props.init()
     .then(() => {
       setTimeout(() => {
-        this.props.navigation.dispatch(removeStartUp)
+        this.props.navigation.dispatch(removeStartUp) 
       }, 2000)
     })
   }
@@ -46,11 +47,11 @@ class Launches extends React.Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    initialLoad: () => {
-      dispatch(loadLaunches())
-      dispatch(loadRockets())
+    init: async () => {
+      await dispatch(loadLaunches())
+      return dispatch(loadRockets())    //need to return something so i can use (.then) after i called the init function and navigate to another view
     }
   }
 }
 
-export default connect(null, mapDispatchToProps)(Launches)
+export default connect(null, mapDispatchToProps)(StartUp)
